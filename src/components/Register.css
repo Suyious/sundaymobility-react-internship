@@ -1,0 +1,40 @@
+.actionForm{
+	display: flex;
+	flex-direction: column;
+}
+
+.actionForm .action_input,
+.actionForm button{
+	padding: 1em;
+	margin-top: 1em;
+	outline: none;
+	border: none;
+	font-size: 0.9em;	
+}
+
+.actionForm .action_input{
+	border-bottom: 1px solid #6f6f6f;
+}
+
+.actionForm button{
+	background: #61acb3;
+	color: #fff;
+	border-radius: 50px;
+	margin-top: 5em;
+}
+
+.input_sub_box{
+	margin-top: 2em;
+}
+
+.input_sub_box{
+	font-size: 0.9em;
+}
+
+.input_sub_box .remember_label{
+	margin-left: 0.5em;
+}
+
+.input_sub_box .input_forgot{
+	float: right;
+}

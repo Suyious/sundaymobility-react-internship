@@ -1,0 +1,39 @@
+.Hero{
+	display: flex;
+	height: 100vh;
+}
+
+.hero_left{
+	width: 60%;
+}
+
+.hero_right{
+	width: 40%;
+}
+
+.hero_left img{
+	width: 100%;
+	height: 100%;	
+}
+
+.hero_right .container{
+	margin-top: 50vh;	
+	margin-left: 50%;	
+	transform: translate(-50%,-50%);
+}
+
+.container h1,
+.container p{
+	text-align: center;
+	font-weight: 500;
+	color: #3a3a3a;
+}
+
+@media (max-width: 768px){
+	.Hero{
+		flex-direction: column;
+	}
+	.hero_left,.hero_right{
+		width: 100%;
+	}
+}

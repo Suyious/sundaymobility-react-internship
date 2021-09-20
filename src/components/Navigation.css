@@ -1,0 +1,27 @@
+.nav{
+	position: fixed;
+	width: 100vw;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.nav_list {
+	display: flex;
+	margin-right: 1.5em;
+}
+
+.nav_page {
+	padding: 1em 1.5em;
+	list-style: none;
+	border-bottom: 4px solid transparent;
+}
+
+.nav_page:hover{
+	border-bottom: 4px solid #61acb3;
+}
+
+.nav_page a{
+	text-decoration: none;
+	color: #000;
+	font-weight: 400;
+}
