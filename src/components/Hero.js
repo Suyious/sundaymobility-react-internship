@@ -1,5 +1,6 @@
 import "./Hero.css"
 
+//Wrapper Element for the user Interface
 const Hero = ({children}) => {
   return(
     <div className="Hero">

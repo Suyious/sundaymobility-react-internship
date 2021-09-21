@@ -4,7 +4,7 @@ import "./Register.css"
 
 const Register = ({user, users, setUsers, setUser}) => {
 
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState({});                     //Errors for the form
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
@@ -12,6 +12,7 @@ const Register = ({user, users, setUsers, setUser}) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const history = useHistory();
 
+  // function to validate user input for the form
   const validateInput = (name,mobile,email,password,confirmPassword) => {
     const error = {};
     if(name.length === 0) error.name = "name must not be empty!"
@@ -20,6 +21,7 @@ const Register = ({user, users, setUsers, setUser}) => {
     if(!email.match(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)) error.email = "email must be valid!"
     if(!error.email && users.find(user=>user.email===email)) error.email = "email is taken!"
     if(password.length<8) error.password = "password must be at least 8 characters long!"
+    if(!error.password && !password.match(/((?=.*\d)(?=.*[a-z])(?=.*[\W]).{8,})/)) error.password = "password must contain letters, numbers and special characters"
     if(confirmPassword.length<8) error.confirmPassword = "password must be at least 8 characters long!"
     if(password !== confirmPassword) error.confirmPassword = "Passwords must match!"
     return error;
@@ -28,7 +30,6 @@ const Register = ({user, users, setUsers, setUser}) => {
   const handleRegisterButton = (e) => {
     e.preventDefault()
     const errorsObj = validateInput(name,mobile,email,password,confirmPassword)
-    //console.log(errorsObj)
     setErrors(errorsObj)
     if(Object.keys(errorsObj).length === 0){
       const userObj = {name, mobile, email, password}
@@ -40,7 +41,7 @@ const Register = ({user, users, setUsers, setUser}) => {
     }
   }
   
-  
+  //Redircting to list page if already logged in  
   if(Object.keys(user).length !== 0) return <Redirect to="/list"/>
 
   return(

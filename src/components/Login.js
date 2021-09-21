@@ -8,6 +8,7 @@ const Login = ({user, users,setUser}) => {
   const [password, setPassword] = useState("");
   const history = useHistory();
 
+  // function to validate user input for the form
   const validateInput = (email,password) => {
     const error = {};
     if(!email.match(/^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/)) error.email = "email must be valid!"
@@ -29,6 +30,7 @@ const Login = ({user, users,setUser}) => {
     }
   }
 
+  //Redircting to list page if already logged in  
   if(Object.keys(user).length !== 0) return <Redirect to="/list"/>
 
   return(

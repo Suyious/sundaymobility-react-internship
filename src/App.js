@@ -8,14 +8,16 @@ import List from "./components/List"
 import {useState} from 'react';
 
 function App() {
+  
+  // States for holding the current user and all users
   const [user,setUser] = useState(JSON.parse(localStorage.getItem("user")) || {});
   const [users,setUsers] = useState(JSON.parse(localStorage.getItem("users")) || []);
 
-
+  // Routing using react-router-dom
   return (
     <div className="App">
       <div className="wrapper">
-        <Router>
+        <Router> 
           <Navigation user={user} setUser={setUser}/>
           <Hero>
             <Route path="/" exact>
