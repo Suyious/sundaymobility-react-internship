@@ -25,3 +25,7 @@
 	color: #000;
 	font-weight: 400;
 }
+
+.nav_page p{
+	cursor: pointer;
+}

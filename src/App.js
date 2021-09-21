@@ -5,18 +5,28 @@ import Hero from "./components/Hero"
 import Register from "./components/Register"
 import Login from "./components/Login"
 import List from "./components/List"
+import {useState} from 'react';
 
 function App() {
+  const [user,setUser] = useState(JSON.parse(localStorage.getItem("user")) || {});
+  const [users,setUsers] = useState(JSON.parse(localStorage.getItem("users")) || []);
+
 
   return (
     <div className="App">
       <div className="wrapper">
         <Router>
-          <Navigation/>
+          <Navigation user={user} setUser={setUser}/>
           <Hero>
-            <Route path="/" exact component={Register}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/list" component={List}/>
+            <Route path="/" exact>
+              <Register setUsers={setUsers} setUser={setUser} user={user} users={users}/>
+            </Route>
+            <Route path="/login">
+              <Login setUsers={setUsers} setUser={setUser} user={user} users={users}/>
+            </Route>
+            <Route path="/list">
+              <List user={user}/>
+            </Route>
           </Hero>
         </Router>
       </div>

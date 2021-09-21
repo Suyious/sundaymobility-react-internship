@@ -16,11 +16,17 @@
 	border-bottom: 1px solid #6f6f6f;
 }
 
+.actionForm .action_error{
+	font-size: 0.8em;
+	color: tomato;
+}
+
 .actionForm button{
 	background: #61acb3;
 	color: #fff;
 	border-radius: 50px;
 	margin-top: 5em;
+	cursor: pointer;
 }
 
 .input_sub_box{

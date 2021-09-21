@@ -1,0 +1,23 @@
+.list_users{
+	list-style: none;
+}
+
+.list_user{
+	margin-bottom: 1em;
+	padding-left: 1em;
+	border-left: 4px solid #61acb3;
+}
+
+.list_user h2{
+	font-size: 1.1em;
+}
+
+.list_user p{
+	font-size: 0.8em;
+}
+
+.list_user h2,.list_user p{
+	color: #3a3a3a;
+	font-weight: 500;
+	text-align: left;
+}
